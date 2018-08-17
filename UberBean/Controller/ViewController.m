@@ -11,6 +11,7 @@
 @import MapKit;
 
 @interface ViewController () <CLLocationManagerDelegate,MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 
@@ -25,7 +26,10 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.delegate = self;
-    
+    //[self.mapView setRegion:self.locationManager];
+    [self.mapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate,
+                                                   MKCoordinateSpanMake(0.5, 0.5))
+                   animated:YES];
     
 }
 
@@ -46,8 +50,9 @@
     if (status == kCLAuthorizationStatusAuthorizedWhenInUse || status == kCLAuthorizationStatusAuthorizedAlways) {
         //[manager startUpdatingLocation];
         [self.locationManager requestLocation];
-    }NSLog(@"The answer is NO!!!");
-    
+    }else{
+        NSLog(@"The answer is NO!!!");
+    }
 }
 
 @end
