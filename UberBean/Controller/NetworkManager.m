@@ -47,23 +47,24 @@
         // If we reach this point, we have successfully retrieved the JSON from the API
         for (NSDictionary *business in businesses){ // 4
             Cafe *cafe = [[Cafe alloc] init];
+            
             cafe.name = business[@"name"];
             cafe.phone = business[@"phone"];
             cafe.rating = business[@"rating"];
-            cafe.image_url = business[@"image_url"];
+            cafe.image_url = business[@"image_url"]; //the easy ones
             
             NSDictionary *coordinates = business[@"coordinates"];
             cafe.longitude = [coordinates valueForKey:@"longitude"];
-            cafe.latitude = [coordinates valueForKey:@"latitude"];
+            cafe.latitude = [coordinates valueForKey:@"latitude"]; //a little deeper for coordinates
             
             NSDictionary *location = business[@"location"];
             NSArray *displayAddress = [location valueForKey:@"display_address"];
             NSString *address = [displayAddress objectAtIndex:0];
             NSString *city = [displayAddress objectAtIndex:1];
             NSString *country = [displayAddress objectAtIndex:2];
-            cafe.display_address = [NSString stringWithFormat:@"%@, %@, %@", address, city, country];
+            cafe.display_address = [NSString stringWithFormat:@"%@, %@, %@", address, city, country]; //tough to get this address
             
-            [self.cafeArray addObject:cafe];
+            [self.cafeArray addObject:cafe]; //add it
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             //  [self.UITableView reloadData];
