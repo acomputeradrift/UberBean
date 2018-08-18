@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+
+#import "NetworkManager.h"
+
 @import CoreLocation;
 @import MapKit;
 
@@ -15,12 +18,18 @@
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
 
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    NetworkManager *networkManager = [[NetworkManager alloc] init];
+    [networkManager getDataFromUrlAndParse];
+    
+
     // Do any additional setup after loading the view, typically from a nib.
     
     self.locationManager = [[CLLocationManager alloc] init];
@@ -30,7 +39,7 @@
     [self.mapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate,
                                                    MKCoordinateSpanMake(0.05, 0.0ean5))
                    animated:YES];
-    
+
 }
 
 
