@@ -10,14 +10,7 @@
 @interface Cafe ()
 //private properties
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *phoneNumber;
-@property (nonatomic, strong) NSString *display_address;
-@property (nonatomic, strong) NSString *rating;
-@property (nonatomic, strong) NSString *longitude;
-@property (nonatomic, strong) NSString *latitude;
-@property (nonatomic, strong) NSString *image_url;
-@property (nonatomic, strong) NSDictionary *dictionary;
+
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NetworkManager.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NetworkManager *networkManager = [[NetworkManager alloc] init];
+    [networkManager getDataFromUrlAndParse];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -27,3 +31,5 @@
 
 
 @end
+
+

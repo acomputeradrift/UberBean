@@ -16,6 +16,7 @@
 		7D0E113F21276E4C00CC4C1B /* UberBeanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E113E21276E4C00CC4C1B /* UberBeanTests.m */; };
 		7D0E114A21276E4C00CC4C1B /* UberBeanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E114921276E4C00CC4C1B /* UberBeanUITests.m */; };
 		7D0E115D2127A11500CC4C1B /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0E115C2127A11500CC4C1B /* Cafe.m */; };
+		7D22F57D2127A92D00535E74 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D22F57C2127A92D00535E74 /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7D0E114B21276E4C00CC4C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D0E115B2127A11500CC4C1B /* Cafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cafe.h; sourceTree = "<group>"; };
 		7D0E115C2127A11500CC4C1B /* Cafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cafe.m; sourceTree = "<group>"; };
+		7D22F57B2127A92D00535E74 /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		7D22F57C2127A92D00535E74 /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 			children = (
 				7D0E112821276E4B00CC4C1B /* ViewController.h */,
 				7D0E112921276E4B00CC4C1B /* ViewController.m */,
+				7D22F57B2127A92D00535E74 /* NetworkManager.h */,
+				7D22F57C2127A92D00535E74 /* NetworkManager.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				7D0E115D2127A11500CC4C1B /* Cafe.m in Sources */,
 				7D0E112A21276E4B00CC4C1B /* ViewController.m in Sources */,
 				7D0E113521276E4C00CC4C1B /* main.m in Sources */,
+				7D22F57D2127A92D00535E74 /* NetworkManager.m in Sources */,
 				7D0E112721276E4B00CC4C1B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

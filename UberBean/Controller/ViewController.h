@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cafe.h"
 
 @interface ViewController : UIViewController
+
 
 
 @end
