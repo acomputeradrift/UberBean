@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+@import CoreLocation;
+@import MapKit;
 
-@interface Cafe : NSObject
+@interface Cafe : NSObject <MKAnnotation>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *phone;
@@ -17,6 +19,8 @@
 @property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *latitude;
 @property (nonatomic, strong) NSString *image_url;
+@property (nonatomic, assign, readonly) CLLocationCoordinate2D coordinate;
+
 //@property (nonatomic, strong) NSDictionary *dictionary;
 
 

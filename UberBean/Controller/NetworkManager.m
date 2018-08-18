@@ -8,18 +8,20 @@
 
 #import "NetworkManager.h"
 
+
 @interface NetworkManager ()
 
-@property (nonatomic, strong) NSMutableArray <Cafe*> *cafeArray;
 
 @end
 
 @implementation NetworkManager
 
-- (void) getDataFromUrlAndParse{
+- (void) getDataFromUrlAndParse: (CLLocationCoordinate2D)coordinates completionHandler:(void(^) (NSArray <MKAnnotation> * cafeArray))completionBlock{
     self.cafeArray = [[NSMutableArray alloc] init];
-    float latitude = 49.2812;
-    float longitude = -123.1170317;
+    float latitude = coordinates.latitude;
+    float longitude = coordinates.longitude;
+    
+    
     NSString *urlString = [NSString stringWithFormat:@"https://api.yelp.com/v3/businesses/search?term=cafe&latitude=%f&longitude=%f", latitude, longitude];
     NSURL *url = [NSURL URLWithString:urlString]; // 1
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url]; // 2
@@ -42,18 +44,17 @@
             // Handle the error
             NSLog(@"jsonError: %@", jsonError.localizedDescription);
             return;
-
+            
         }
         NSArray* businesses = yelpDictionary[@"businesses"];
         // If we reach this point, we have successfully retrieved the JSON from the API
         for (NSDictionary *business in businesses){ // 4
-           
+            
             Cafe *cafe = [Cafe initWithDictionary:business];
             [self.cafeArray addObject:cafe]; //add it
-            
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            //  [self.UITableView reloadData];
+            completionBlock([self.cafeArray copy]);
         }];
     }];
     [dataTask resume]; // 6

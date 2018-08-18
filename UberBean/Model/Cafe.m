@@ -17,7 +17,7 @@
 @implementation Cafe
 
 
-+ (instancetype) initWithDictionary: (NSDictionary*)dictionary{
++ (instancetype) initWithDictionary: (NSDictionary*)dictionary {
     Cafe *cafe = [[Cafe alloc] init];
     cafe.name = dictionary[@"name"];
     cafe.phone = dictionary[@"phone"];
@@ -25,6 +25,12 @@
     cafe.image_url = dictionary[@"image_url"]; //the easy ones
     
     NSDictionary *coordinates = dictionary[@"coordinates"];
+    NSNumber *longitudeNumber = [coordinates valueForKey:@"longitude"];
+    NSNumber *latitudeNumber = [coordinates valueForKey:@"latitude"];
+    CLLocationDegrees latitude = [latitudeNumber doubleValue];
+    CLLocationDegrees longitude = [longitudeNumber doubleValue];
+    [cafe setLocation:CLLocationCoordinate2DMake(latitude, longitude)];
+    
     cafe.longitude = [coordinates valueForKey:@"longitude"];
     cafe.latitude = [coordinates valueForKey:@"latitude"]; //a little deeper for coordinates
     
@@ -36,4 +42,9 @@
     cafe.display_address = [NSString stringWithFormat:@"%@, %@, %@", address, city, country]; //tough to get this address
     return cafe;
 }
+
+- (void) setLocation: (CLLocationCoordinate2D)coordinate {
+    _coordinate = coordinate;
+}
+
 @end

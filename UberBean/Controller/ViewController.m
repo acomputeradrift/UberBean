@@ -25,21 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NetworkManager *networkManager = [[NetworkManager alloc] init];
-    [networkManager getDataFromUrlAndParse];
-    
-
-    // Do any additional setup after loading the view, typically from a nib.
     
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.delegate = self;
-    //[self.mapView setRegion:self.locationManager];
     [self.mapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate,
                                                    MKCoordinateSpanMake(0.05, 0.05))
                    animated:YES];
-
+    NetworkManager *networkManager = [[NetworkManager alloc] init];
+    [networkManager getDataFromUrlAndParse:self.locationManager.location.coordinate completionHandler:^(NSArray * _Nullable cafeArray) {
+        
+         [self.mapView addAnnotations: cafeArray];
+    }];
+   
 }
 
 
