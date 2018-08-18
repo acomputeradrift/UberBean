@@ -37,7 +37,7 @@
     self.locationManager.delegate = self;
     //[self.mapView setRegion:self.locationManager];
     [self.mapView setRegion:MKCoordinateRegionMake(self.locationManager.location.coordinate,
-                                                   MKCoordinateSpanMake(0.05, 0.0ean5))
+                                                   MKCoordinateSpanMake(0.05, 0.05))
                    animated:YES];
 
 }

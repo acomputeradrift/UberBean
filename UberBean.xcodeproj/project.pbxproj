@@ -107,11 +107,9 @@
 		7D0E112421276E4B00CC4C1B /* UberBean */ = {
 			isa = PBXGroup;
 			children = (
-
 				7D0E115E2127A11B00CC4C1B /* Model */,
 				7D0E115A2127A0E000CC4C1B /* Controller */,
 				7D0E11592127A0D400CC4C1B /* Storyboards */,
-
 				7D0E112E21276E4C00CC4C1B /* Assets.xcassets */,
 				7D0E113321276E4C00CC4C1B /* Info.plist */,
 				7D0E113421276E4C00CC4C1B /* main.m */,
@@ -139,7 +137,6 @@
 			path = UberBeanUITests;
 			sourceTree = "<group>";
 		};
-
 		7D0E11592127A0D400CC4C1B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,20 +147,16 @@
 			sourceTree = "<group>";
 		};
 		7D0E115A2127A0E000CC4C1B /* Controller */ = {
-
 			isa = PBXGroup;
 			children = (
 				7D0E112821276E4B00CC4C1B /* ViewController.h */,
 				7D0E112921276E4B00CC4C1B /* ViewController.m */,
-
 				7D22F57B2127A92D00535E74 /* NetworkManager.h */,
 				7D22F57C2127A92D00535E74 /* NetworkManager.m */,
-
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-
 		7D0E115E2127A11B00CC4C1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +164,6 @@
 				7D0E115C2127A11500CC4C1B /* Cafe.m */,
 			);
 			path = Model;
-
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W7K9Q4Z2Y3;
 				INFOPLIST_FILE = UberBean/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W7K9Q4Z2Y3;
 				INFOPLIST_FILE = UberBean/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
