@@ -17,8 +17,9 @@
 @property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *latitude;
 @property (nonatomic, strong) NSString *image_url;
-@property (nonatomic, strong) NSDictionary *dictionary;
+//@property (nonatomic, strong) NSDictionary *dictionary;
 
-- (instancetype)initWithDictionary: (NSDictionary*)dictionary;
+
++ (instancetype) initWithDictionary: (NSDictionary*)dictionary;
 
 @end

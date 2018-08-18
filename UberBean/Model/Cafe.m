@@ -16,13 +16,24 @@
 
 @implementation Cafe
 
-- (instancetype)initWithDictionary: (NSDictionary*)dictionary
-{
-    self = [super init];
-    if (self) {
-        _dictionary = dictionary;
-    }
-    return self;
-}
 
++ (instancetype) initWithDictionary: (NSDictionary*)dictionary{
+    Cafe *cafe = [[Cafe alloc] init];
+    cafe.name = dictionary[@"name"];
+    cafe.phone = dictionary[@"phone"];
+    cafe.rating = dictionary[@"rating"];
+    cafe.image_url = dictionary[@"image_url"]; //the easy ones
+    
+    NSDictionary *coordinates = dictionary[@"coordinates"];
+    cafe.longitude = [coordinates valueForKey:@"longitude"];
+    cafe.latitude = [coordinates valueForKey:@"latitude"]; //a little deeper for coordinates
+    
+    NSDictionary *location = dictionary[@"location"];
+    NSArray *displayAddress = [location valueForKey:@"display_address"];
+    NSString *address = [displayAddress objectAtIndex:0];
+    NSString *city = [displayAddress objectAtIndex:1];
+    NSString *country = [displayAddress objectAtIndex:2];
+    cafe.display_address = [NSString stringWithFormat:@"%@, %@, %@", address, city, country]; //tough to get this address
+    return cafe;
+}
 @end
