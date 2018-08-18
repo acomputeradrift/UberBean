@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UberBean/Controller/NetworkManager.m"
-            timestampString = "556251385.546047"
+            timestampString = "556254153.604951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-getDataFromUrlAndParse"
             landmarkType = "7">
             <Locations>
@@ -26,12 +26,12 @@
                   moduleName = "UberBean"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jamie/Desktop/C/UberBean/UberBean/Controller/NetworkManager.m"
-                  timestampString = "556251385.570628"
+                  timestampString = "556254201.976388"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1682">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2012">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "UberBean"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jamie/Desktop/C/UberBean/UberBean/Controller/NetworkManager.m"
-                  timestampString = "556251385.578925"
+                  timestampString = "556254201.979177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "1690">
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2146">
                </Location>
             </Locations>
          </BreakpointContent>

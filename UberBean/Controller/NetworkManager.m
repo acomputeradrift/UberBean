@@ -49,19 +49,21 @@
             Cafe *cafe = [[Cafe alloc] init];
             cafe.name = business[@"name"];
             cafe.phone = business[@"phone"];
-            cafe.display_address = business[@"display_address"];
             cafe.rating = business[@"rating"];
             cafe.image_url = business[@"image_url"];
-            cafe.longitude = business[@"longitude "];
-            cafe.latitude = business[@"latitude"];
             
-            NSDictionary* coordinates = business[@"coordinates"];
+            NSDictionary *coordinates = business[@"coordinates"];
+            cafe.longitude = [coordinates valueForKey:@"longitude"];
+            cafe.latitude = [coordinates valueForKey:@"latitude"];
             
-            //create Cafe object
+            NSDictionary *location = business[@"location"];
+            NSArray *displayAddress = [location valueForKey:@"display_address"];
+            NSString *address = [displayAddress objectAtIndex:0];
+            NSString *city = [displayAddress objectAtIndex:1];
+            NSString *country = [displayAddress objectAtIndex:2];
+            cafe.display_address = [NSString stringWithFormat:@"%@, %@, %@", address, city, country];
             
-            // cafe.name = cafName;
             [self.cafeArray addObject:cafe];
-            // [self.myRepo addObject:repo];
         }
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             //  [self.UITableView reloadData];
